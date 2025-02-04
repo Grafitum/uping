@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/imagem/winter_winter_landscape_trees_93550_1920x1080.jpg");
+    background-image: url("imagem/winter_winter_landscape_trees_93550_1920x1080.jpg");
 }
 
 .form-box {

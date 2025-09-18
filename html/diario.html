@@ -6,83 +6,156 @@
 <title>Diário de Bordo - Feira 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --primary: #00711a;
+    --secondary: #7b61ff;
+    --light: #ffffffcc;
+    --dark: #2b1a6d;
+  }
+  * {
+    box-sizing: border-box;
+  }
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg,#fef3f9 0%, #f3fbff 100%);
     color: #333;
+    line-height: 1.6;
   }
   header {
-    background: #00711a;
+    background: var(--primary);
     color: #fff;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
   }
   header h1 {
     margin: 0;
+    font-size: 2.5rem;
     font-family: 'Playfair Display', serif;
   }
+  header p {
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
   .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 20px auto;
     padding: 0 15px;
   }
-  .entry {
-    background: #ffffffcc;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
-  }
-  .entry:hover {
-    transform: translateY(-5px);
-  }
-  .entry h2 {
-    margin-top: 0;
-    color: #2b1a6d;
-  }
-  .entry .date {
-    color: #7b61ff;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .filter {
+  .controls {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .filter, .search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   .filter button {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    background: #7b61ff;
+    background: var(--secondary);
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
   }
   .filter button:hover, .filter button.active {
     background: #5a43cc;
+    transform: scale(1.05);
+  }
+  .search-box input {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 200px;
+    transition: 0.3s;
+  }
+  .search-box input:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 6px #7b61ff66;
+  }
+  .entries {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 700px) {
+    .entries {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .entry {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+  .entry h2 {
+    margin-top: 0;
+    color: var(--dark);
+  }
+  .entry .date {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .tags {
+    margin-top: 12px;
+  }
+  .tag {
+    display: inline-block;
+    background: #eee;
+    color: #333;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-right: 6px;
+    margin-top: 5px;
+  }
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
   }
 </style>
 </head>
 <body>
 <header>
   <h1>Diário de Bordo - Feira 2025</h1>
-  <p>Veja o histórico de atividades de forma dinâmica</p>
+  <p>Histórico detalhado das atividades, reuniões e preparativos do projeto</p>
 </header>
 <div class="container">
-  <div class="filter">
-    <button data-date="all" class="active">Todos</button>
-    <button data-date="25/08">25/08</button>
-    <button data-date="03/09">03/09</button>
-    <button data-date="07/09">07/09</button>
-    <button data-date="09/09">09/09</button>
-    <button data-date="10/09">10/09</button>
-    <button data-date="12/09">12/09</button>
+  <div class="controls">
+    <div class="filter">
+      <button data-date="all" class="active">Todos</button>
+      <button data-date="25/08">25/08</button>
+      <button data-date="03/09">03/09</button>
+      <button data-date="07/09">07/09</button>
+      <button data-date="09/09">09/09</button>
+      <button data-date="10/09">10/09</button>
+      <button data-date="12/09">12/09</button>
+      <button data-date="14/09">14/09</button>
+      <button data-date="15/09">15/09</button>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar por palavra-chave...">
+    </div>
   </div>
 
   <div class="entries" id="entries">
@@ -90,58 +163,118 @@
       <div class="date">25/08</div>
       <h2>Reunião - Ideias e Planejamento</h2>
       <p>Decoração: cartolina, papel no vidro do laboratório, TNT. Café e crachás para todos. Site terá três opções: encontre reciclagem, chat-bot e quiz.</p>
+      <div class="tags">
+        <span class="tag">Decoração</span>
+        <span class="tag">Site</span>
+        <span class="tag">Planejamento</span>
+      </div>
     </div>
 
     <div class="entry" data-date="03/09">
       <div class="date">03/09</div>
       <h2>Medição e Ajustes no Site</h2>
       <p>Medições para TNT concluídas. Botões do site alterados para expandir o quiz e facilitar interação.</p>
+      <div class="tags">
+        <span class="tag">Site</span>
+        <span class="tag">Design</span>
+      </div>
     </div>
 
     <div class="entry" data-date="07/09">
       <div class="date">07/09</div>
       <h2>Produção Gráfica</h2>
       <p>Produção do banner realizada com cores vivas e tipografia legível. Preparados elementos visuais complementares para o laboratório e estande.</p>
+      <div class="tags">
+        <span class="tag">Banner</span>
+        <span class="tag">Design</span>
+      </div>
     </div>
 
     <div class="entry" data-date="09/09">
       <div class="date">09/09</div>
       <h2>Finalização do Banner</h2>
       <p>Arte final concluída, pronta para impressão e uso.</p>
+      <div class="tags">
+        <span class="tag">Banner</span>
+        <span class="tag">Impressão</span>
+      </div>
     </div>
 
     <div class="entry" data-date="10/09">
       <div class="date">10/09</div>
       <h2>Produção de Conteúdo</h2>
       <p>Roteiro, slides e mensagens-chave para apresentação preparados. Adição de perguntas interativas e curiosidades sobre reciclagem.</p>
+      <div class="tags">
+        <span class="tag">Apresentação</span>
+        <span class="tag">Conteúdo</span>
+      </div>
     </div>
 
     <div class="entry" data-date="12/09">
       <div class="date">12/09</div>
       <h2>Reunião de Alinhamento</h2>
       <p>Definido roteiro de apresentação, distribuição de brindes e abordagem ao público. Lista de contatos de voluntários, horários de montagem e manutenção do estande.</p>
+      <div class="tags">
+        <span class="tag">Equipe</span>
+        <span class="tag">Roteiro</span>
+        <span class="tag">Brindes</span>
+      </div>
+    </div>
+
+    <div class="entry" data-date="14/09">
+      <div class="date">14/09</div>
+      <h2>Testes do Site</h2>
+      <p>Realizados testes no site em diferentes navegadores e celulares. Corrigidos bugs no quiz e melhorada a velocidade de carregamento.</p>
+      <div class="tags">
+        <span class="tag">Teste</span>
+        <span class="tag">Site</span>
+        <span class="tag">Quiz</span>
+      </div>
+    </div>
+
+    <div class="entry" data-date="15/09">
+      <div class="date">15/09</div>
+      <h2>Montagem do Estande</h2>
+      <p>Estrutura principal montada. Painéis decorativos e espaço para apresentação configurados. Organização dos materiais de apoio.</p>
+      <div class="tags">
+        <span class="tag">Estande</span>
+        <span class="tag">Montagem</span>
+      </div>
     </div>
   </div>
 </div>
 
+<footer>
+  &copy; 2025 Diário de Bordo - Feira Sustentável | Desenvolvido pela equipe do projeto
+</footer>
+
 <script>
 const filterButtons = document.querySelectorAll('.filter button');
 const entries = document.querySelectorAll('.entry');
+const searchInput = document.getElementById('searchInput');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
     filterButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
     const date = button.getAttribute('data-date');
-    entries.forEach(entry => {
-      if(date === 'all' || entry.getAttribute('data-date') === date){
-        entry.style.display = 'block';
-      } else {
-        entry.style.display = 'none';
-      }
-    });
+    filterEntries(date, searchInput.value.toLowerCase());
   });
 });
+
+searchInput.addEventListener('input', () => {
+  const activeDate = document.querySelector('.filter button.active').getAttribute('data-date');
+  filterEntries(activeDate, searchInput.value.toLowerCase());
+});
+
+function filterEntries(date, keyword) {
+  entries.forEach(entry => {
+    const matchesDate = (date === 'all' || entry.getAttribute('data-date') === date);
+    const text = entry.innerText.toLowerCase();
+    const matchesKeyword = text.includes(keyword);
+    entry.style.display = (matchesDate && matchesKeyword) ? 'block' : 'none';
+  });
+}
 </script>
 </body>
 </html>

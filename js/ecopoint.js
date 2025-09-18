@@ -53,7 +53,7 @@ const ecopontos = [
   { bairro:"Cocotá", nome:"Ponto Verde Cocotá", lat:-22.832, lng:-43.033 },
   { bairro:"Coelho Neto", nome:"Lixão Coelho Neto", lat:-22.828, lng:-43.315 },
   { bairro:"Colégio", nome:"Centro de Reciclagem Colégio", lat:-22.838, lng:-43.305 },
-  { bairro:"Complexo do Alemão", nome:"Aterro do Alemão", lat:-22.846, lng:-43.286 },
+  { bairro:"Alemão", nome:"Aterro do Alemão", lat:-22.846, lng:-43.286 },
   { bairro:"Copacabana", nome:"Lixão de Copacabana", apelidos:["Copacabana"], lat:-22.971, lng:-43.182 },
   { bairro:"Cordovil", nome:"Ponto Verde Cordovil", lat:-22.831, lng:-43.287 },
   { bairro:"Cosme Velho", nome:"Central de Reciclagem Cosme Velho", lat:-22.949, lng:-43.186 },
@@ -119,13 +119,13 @@ const ecopontos = [
 { bairro:"Padre Miguel", nome:"Ponto Verde Padre Miguel", lat:-22.890, lng:-43.428 },
 { bairro:"Paquetá", nome:"Central de Reciclagem Paquetá", lat:-22.817, lng:-43.122 },
 { bairro:"Parada de Lucas", nome:"Lixão Parada de Lucas", lat:-22.818, lng:-43.279 },
-{ bairro:"Parque Anchieta", nome:"Aterro Parque Anchieta", lat:-22.854, lng:-43.339 },
+{ bairro:"Anchieta", nome:"Aterro Parque Anchieta", lat:-22.854, lng:-43.339 },
 { bairro:"Parque Colúmbia", nome:"Ponto Verde Parque Colúmbia", lat:-22.843, lng:-43.297 },
 { bairro:"Pavuna", nome:"Central de Reciclagem Pavuna", lat:-22.809, lng:-43.351 },
 { bairro:"Pechincha", nome:"Lixão Pechincha", lat:-22.882, lng:-43.413 },
 { bairro:"Pedra de Guaratiba", nome:"Aterro Pedra de Guaratiba", lat:-23.050, lng:-43.485 },
 { bairro:"Penha", nome:"Ponto Verde Penha", lat:-22.843, lng:-43.292 },
-{ bairro:"Penha Circular", nome:"Lixão Penha Circular", lat:-22.842, lng:-43.287 },
+{ bairro:"Penha ", nome:"Lixão Penha Circular", lat:-22.842, lng:-43.287 },
 { bairro:"Piedade", nome:"Central de Reciclagem Piedade", lat:-22.838, lng:-43.278 },
 { bairro:"Pilares", nome:"Aterro Pilares", lat:-22.842, lng:-43.267 },
 { bairro:"Pitangueiras", nome:"Ponto Verde Pitangueiras", lat:-22.855, lng:-43.290 },
@@ -136,7 +136,7 @@ const ecopontos = [
 { bairro:"Quintino ", nome:"Aterro Quintino Bocaiúva", lat:-22.864, lng:-43.301 },
 { bairro:"Ramos", nome:"Central de Reciclagem Ramos", lat:-22.829, lng:-43.258 },
 { bairro:"Realengo", nome:"Lixão Realengo", lat:-22.865, lng:-43.413 },
-{ bairro:"Recreio dos Bandeirantes", nome:"Ponto Verde Recreio", lat:-23.004, lng:-43.418 },
+{ bairro:"Recreio", nome:"Ponto Verde Recreio", lat:-23.004, lng:-43.418 },
 { bairro:"Riachuelo", nome:"Central de Reciclagem Riachuelo", lat:-22.876, lng:-43.226 },
 { bairro:"Ribeira", nome:"Lixão Ribeira", lat:-22.948, lng:-43.164 },
 { bairro:"Ricardo de Albuquerque", nome:"Ponto Verde Ricardo de Albuquerque", lat:-22.857, lng:-43.338 },
@@ -179,7 +179,7 @@ const ecopontos = [
 { bairro:"Vista Alegre", nome:"Ponto Verde Vista Alegre", lat:-22.875, lng:-43.330 },
 { bairro:"Zumbi", nome:"Central de Reciclagem Zumbi", lat:-22.849, lng:-43.342 },
 
-  { bairro:" quintino ", nome: "point rec" , lat: -22.88528, lng: -43.32833 },  // :contentReference[oaicite:0]{index=0}
+   // :contentReference[oaicite:0]{index=0}
   { bairro:"Cascadura",  nome: "lixão do gg" ,lat: -22.88528, lng: -43.32833 },                  // :contentReference[oaicite:1]{index=1}
   { bairro:"Tomás Coelho", nome: "colurmb pet" , lat: -22.8677, lng: -43.30609 },                // :contentReference[oaicite:2]{index=2}
   { bairro:"Madureira", nome: "lota da gruta" , lat: -22.8725, lng: -43.3364 },                    // :contentReference[oaicite:3]{index=3}

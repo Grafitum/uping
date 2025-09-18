@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecoponto RJ</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="../css/eco.css">
+</head>
+<body>
+<header>
+  <h1>Encontre o ecoponto mais próximo</h1>
+  <input type="text" id="bairroInput" placeholder="Digite seu bairro">
+  
+  <!-- Novo filtro de materiais -->
+  <select id="materialFilter">
+    <option value="">Todos os materiais</option>
+    <option value="papel">Papel</option>
+    <option value="plastico">Plástico</option>
+    <option value="vidro">Vidro</option>
+    <option value="metal">Metal</option>
+  </select>
+
+  <button id="btnEncontrar">Encontrar ecoponto</button>
+</header>
+
+
+  <div id="map"></div>
+  <div id="info"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../js/ecopoint.js"></script>
+</body>
+</html>

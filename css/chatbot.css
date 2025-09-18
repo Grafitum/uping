@@ -1,0 +1,176 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #e6f2e6; /* verde clarinho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Container do chat */
+.chat-container {
+  width: 450px;
+  height: 600px;
+  background: #f9fff9;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,128,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.chat-container header {
+  padding: 20px;
+  text-align: center;
+  background: #4CAF50;
+  color: #fff;
+  border-bottom: 1px solid #3e8e41;
+}
+
+.chat-container header h1 {
+  font-size: 1.8em;
+}
+
+.chat-container header p {
+  font-size: 1em;
+}
+
+/* Área de chat */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  background: #f0fff0;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+/* Balões de mensagens */
+.user-message, .bot-message {
+  padding: 12px 18px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background: #a3d9a5; /* verde usuário */
+  align-self: flex-end;
+  color: #fff;
+  font-weight: bold;
+}
+
+.bot-message {
+  background: #e0ffe0; /* verde bot */
+  align-self: flex-start;
+  border: 1px solid #4CAF50;
+  color: #333;
+}
+
+/* Área de input */
+.input-area {
+  display: flex;
+  padding: 12px;
+  background: #f0fff0;
+  border-top: 1px solid #3e8e41;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1em;
+}
+
+.input-area button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.input-area button:hover {
+  background: #45a049;
+}
+
+/* Botões de opção */
+.options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: #f0fff0;
+  border-top: 1px solid #3e8e41;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option-btn {
+  padding: 8px 15px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.option-btn:hover {
+  background: #45a049;
+}
+
+/* Scroll customizado */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0,128,0,0.4);
+  border-radius: 3px;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 500px) {
+  .chat-container {
+    width: 95%;
+    height: 85vh;
+  }
+
+  .input-area input, .input-area button, .option-btn {
+    font-size: 0.95em;
+    padding: 10px 12px;
+  }
+
+  .user-message, .bot-message {
+    font-size: 0.95em;
+    padding: 10px 12px;
+  }
+
+  .chat-container header h1 {
+    font-size: 1.5em;
+  }
+
+  .chat-container header p {
+    font-size: 0.9em;
+  }
+}

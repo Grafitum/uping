@@ -1,0 +1,183 @@
+/* ============================= */
+/* 🌿 ESTILO GERAL DO JOGO */
+/* ============================= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #2e7d32;
+}
+
+/* ============================= */
+/* 🏆 TÍTULOS E TELAS */
+/* ============================= */
+h1, h2 {
+  color: #1b5e20;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+}
+
+#start-screen, #game-over {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.8);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+  animation: fadeIn 1s;
+}
+
+/* ============================= */
+/* 🔘 BOTÕES */
+/* ============================= */
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ============================= */
+/* 📊 BARRA SUPERIOR */
+/* ============================= */
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(200, 230, 201, 0.9);
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 17px;
+  color: #2e7d32;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ============================= */
+/* 📦 ITEM (MATERIAL) */
+/* ============================= */
+#material {
+  width: 180px;
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 4px dashed #66bb6a;
+  border-radius: 50%;
+  cursor: grab;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0 auto;
+  background-color: #f1f8e9;
+}
+#material:active {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* ============================= */
+/* 🗑️ LIXEIRAS */
+/* ============================= */
+.bins {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.bin {
+  width: 130px;
+  height: 130px;
+  border: 3px solid #a5d6a7;
+  border-radius: 20px;
+  padding: 10px;
+  background: #ffffffcc;
+  box-shadow: 0px 3px 12px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.bin img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.bin:hover {
+  transform: scale(1.08) rotate(-2deg);
+  background: #f1f8e9;
+}
+.bin.correct {
+  border-color: #43a047;
+  background: #e8f5e9;
+  animation: pulseGreen 1s;
+}
+.bin.wrong {
+  border-color: #ef5350;
+  background: #ffebee;
+  animation: pulseRed 1s;
+}
+
+
+/* ============================= */
+/* 💬 FEEDBACK */
+/* ============================= */
+.feedback {
+  margin-top: 18px;
+  font-size: 28px;
+  font-weight: bold;
+  min-height: 36px;
+  transition: all 0.3s ease;
+  color: #1b5e20;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ============================= */
+/* 🎁 RECOMPENSA FINAL */
+/* ============================= */
+.reward {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #388e3c;
+  animation: sway 2s infinite ease-in-out;
+}
+
+/* ============================= */
+/* ✨ ANIMAÇÕES */
+/* ============================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGreen {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes pulseRed {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+}
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}

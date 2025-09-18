@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* Header */
+header {
+  background-color: #27ae60;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+header input, header select, header button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+}
+
+header input, header select {
+  width: 200px;
+}
+
+header button {
+  background-color: #2ecc71;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header button:hover {
+  background-color: #1abc57;
+}
+
+/* Mapa */
+#map {
+  flex: 1;
+  min-height: 400px;
+}
+
+/* Info */
+#info {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  background-color: #ecf0f1;
+}
+
+/* Lista de ecopontos */
+#ecopontosList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+/* Cards */
+.ecoponto {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ecoponto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.ecoponto h3 {
+  color: #27ae60;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.ecoponto p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header input, header select {
+    width: 100%;
+  }
+
+  #ecopontosList {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ecoponto {
+    width: 90%;
+  }
+}
